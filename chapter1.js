@@ -1,109 +1,109 @@
-// Sigma
-// Implement a function sigma(num)​ that, given a
-// number, returns the sum of all positive integers
-// from 1 up to number (inclusive). Ex.: sigma(3)
-// = 6 (or 1+2+3); sigma(5)​ = 15 (or 1+2+3+4+5).
-function sigma(num) {
-  sum = 0;
-  for (var i = 1; i <= num; i++) {
-    sum += i;
-  }
-  console.log(sum);
-  return sum;
-}
+// // Sigma
+// // Implement a function sigma(num)​ that, given a
+// // number, returns the sum of all positive integers
+// // from 1 up to number (inclusive). Ex.: sigma(3)
+// // = 6 (or 1+2+3); sigma(5)​ = 15 (or 1+2+3+4+5).
+// function sigma(num) {
+//   sum = 0;
+//   for (var i = 1; i <= num; i++) {
+//     sum += i;
+//   }
+//   console.log(sum);
+//   return sum;
+// }
 
-sigma(3);
+// sigma(3);
 
-// Factorial
-// Write a function factorial(num)​ that, given a
-// number, returns the product (multiplication) of all
-// positive integers from 1 up to number (inclusive).
-// For example, factorial(3)​ = 6 (or 1 * 2 * 3);
-// factorial(5)​ = 120 (or 1 * 2 * 3 * 4 * 5).
-function factorial(num) {
-  product = 1;
-  for (var i = 1; i <= num; i++) {
-    product *= i;
-  }
-  console.log(product);
-  return product;
-}
+// // Factorial
+// // Write a function factorial(num)​ that, given a
+// // number, returns the product (multiplication) of all
+// // positive integers from 1 up to number (inclusive).
+// // For example, factorial(3)​ = 6 (or 1 * 2 * 3);
+// // factorial(5)​ = 120 (or 1 * 2 * 3 * 4 * 5).
+// function factorial(num) {
+//   product = 1;
+//   for (var i = 1; i <= num; i++) {
+//     product *= i;
+//   }
+//   console.log(product);
+//   return product;
+// }
 
-factorial(5);
+// factorial(5);
 
-// Threes and Fives
-// Create function ThreesFives()​ that adds each value from 100 and 4000000 (inclusive) if that value
-// is evenly divisible by 3 or 5 but not both. Display the final sum in the console.
-function ThreesFives() {
-  sum = 0;
-  for (var i = 100; i <= 4000000; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      sum += 0;
-    } else if (i % 5 === 0) {
-      sum += i;
-    } else if (i % 3 === 0) {
-      sum += i;
-    }
-  }
-  console.log(sum);
-}
+// // Threes and Fives
+// // Create function ThreesFives()​ that adds each value from 100 and 4000000 (inclusive) if that value
+// // is evenly divisible by 3 or 5 but not both. Display the final sum in the console.
+// function ThreesFives() {
+//   sum = 0;
+//   for (var i = 100; i <= 4000000; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       sum += 0;
+//     } else if (i % 5 === 0) {
+//       sum += i;
+//     } else if (i % 3 === 0) {
+//       sum += i;
+//     }
+//   }
+//   console.log(sum);
+// }
 
-ThreesFives();
-// Second:​ Change your function to make a BetterThreesFives(start,end)​where start and end
-// values are customizable. You can think of the above ThreesFives()​ function as
-// BetterThreesFives(100,4000000)​.
-function BetterThreesFives(start, end) {
-  sum = 0;
-  for (var i = start; i <= end; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      sum += 0;
-    } else if (i % 3 === 0 || i % 5 === 0) {
-      sum += i;
-    }
-  }
-  console.log(sum);
-}
+// ThreesFives();
+// // Second:​ Change your function to make a BetterThreesFives(start,end)​where start and end
+// // values are customizable. You can think of the above ThreesFives()​ function as
+// // BetterThreesFives(100,4000000)​.
+// function BetterThreesFives(start, end) {
+//   sum = 0;
+//   for (var i = start; i <= end; i++) {
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       sum += 0;
+//     } else if (i % 3 === 0 || i % 5 === 0) {
+//       sum += i;
+//     }
+//   }
+//   console.log(sum);
+// }
 
-BetterThreesFives(100, 4000000);
+// BetterThreesFives(100, 4000000);
 
-// Generate Coin Change
-// Implement generateCoinChange(cents)​ that accepts a parameter for the number of cents, and
-// computes how to represent that amount with the smallest number of coins. Console.log the result.
-var coins = []; // create variable = [store coin type and count in here]
-function generateCoinChange(cents) {
-  var quarter = 0;
-  var dime = 0;
-  var nickel = 0;
-  var penny = 0;
-  var remainder = 0;
-  console.log('cents: ' + cents);
-  for (var i = cents; i > 0; i = remainder) {
-    if (i > 24) {
-      quarter = Math.floor(i / 25); //log the integer into quarter
-      remainder = i % 25; //take the remainder loop it back up to check if still greater then 0
-      // console.log("remainder: " + remainder);
-    } else if (i < 25 && i > 10) {
-      dime = Math.floor(remainder / 10);
-      remainder = remainder % 10;
-      // console.log("remainder: " + remainder);
-    } else if (i < 10 && i > 4) {
-      nickel = Math.floor(remainder / 5);
-      remainder = remainder % 5;
-      // console.log("remainder: " + remainder);
-    } else {
-      penny = remainder / 1;
-      remainder = 0;
-      // console.log("remainder: " + remainder);
-      console.log(quarter + " quarter(s)");
-      console.log(dime + " dime(s)");
-      console.log(nickel + " nickel(s)");
-      console.log(penny + " penny(s)");
-      // console.log("remainder: " + remainder);
-      return;
-    }
-  }
-}
-generateCoinChange((Math.floor(Math.random()*100))); 
+// // Generate Coin Change
+// // Implement generateCoinChange(cents)​ that accepts a parameter for the number of cents, and
+// // computes how to represent that amount with the smallest number of coins. Console.log the result.
+// var coins = []; // create variable = [store coin type and count in here]
+// function generateCoinChange(cents) {
+//   var quarter = 0;
+//   var dime = 0;
+//   var nickel = 0;
+//   var penny = 0;
+//   var remainder = 0;
+//   console.log('cents: ' + cents);
+//   for (var i = cents; i > 0; i = remainder) {
+//     if (i > 24) {
+//       quarter = Math.floor(i / 25); //log the integer into quarter
+//       remainder = i % 25; //take the remainder loop it back up to check if still greater then 0
+//       // console.log("remainder: " + remainder);
+//     } else if (i < 25 && i > 10) {
+//       dime = Math.floor(remainder / 10);
+//       remainder = remainder % 10;
+//       // console.log("remainder: " + remainder);
+//     } else if (i < 10 && i > 4) {
+//       nickel = Math.floor(remainder / 5);
+//       remainder = remainder % 5;
+//       // console.log("remainder: " + remainder);
+//     } else {
+//       penny = remainder / 1;
+//       remainder = 0;
+//       // console.log("remainder: " + remainder);
+//       console.log(quarter + " quarter(s)");
+//       console.log(dime + " dime(s)");
+//       console.log(nickel + " nickel(s)");
+//       console.log(penny + " penny(s)");
+//       // console.log("remainder: " + remainder);
+//       return;
+//     }
+//   }
+// }
+// generateCoinChange((Math.floor(Math.random()*100)));
 
 /**Statistics to Doubles
 Implement a ‘die’ that randomly returns an
@@ -111,6 +111,50 @@ integer between 1 and 6 inclusive. Roll a pair of
 these dice, tracking the statistics until doubles
 are rolled. Display the number of rolls, min, max,
 and average. */
+function doubleDice() {
+  rolls = 0;
+  min = 7;
+  max = 0;
+  sum = 0;
+  for (var i = 1; i < 50; i++) {
+    die1 = Math.floor(Math.random() * 6 + 1);
+    die2 = Math.floor(Math.random() * 6 + 1);
+    // console.log(die1, die2);
+    lowest = Math.min(die1, die2);
+    highest = Math.max(die1, die2);
+    // console.log("lowest:" + lowest, "highest: " + highest);
+    sum += die1 +die2;
+    rolls = i;
+    if (die1 == die2 && (lowest < min && highest > max)) {
+      min = Math.min(die1, die2);
+      max = Math.max(die1, die2);
+      console.log(rolls, min, max, sum/rolls);
+      return;
+    } else if (die1 == die2 && (lowest < min || highest > max)) {
+      if (lowest < min) {
+        min = lowest;
+      } else
+      max = highest;
+      console.log(rolls, min, max, sum/rolls);
+      return;
+    } else if (die1 == die2) {
+      console.log(rolls, min, max, sum/rolls);
+      return;
+    } else if (lowest < min && highest > max) {
+        min = Math.min(die1, die2);
+        max = Math.max(die1, die2);
+        // console.log("First:" + rolls, min, max);
+    } else if (lowest < min || highest > max) {
+      if (lowest < min) {
+        min = lowest;
+      } else
+        max = highest;
+      // console.log("Second:" + rolls, min, max);
+    }
+  }
+}
+
+doubleDice();
 
 
 /**Sum To One Digit
@@ -119,14 +163,12 @@ given a number, sums that number’s digits
 repeatedly until the sum is only one digit. Return
 that final one digit result. */
 
-
 /**Fibonacci
 Implement the Fibonacci function, a famous mathematical equation that generates a numerical
 sequence such that each number is the sum of the previous two. The Fibonacci numbers at index 0
 and 1, coincidentally, have values of 0 and 1. Your function should accept an argument of which
 Fibonacci number.
 Examples: fibonacci(2)​ = 1, fibonacci(3)​ = 2, fibonacci(4)​ = 3, fibonacci(5)​ = 5, etc. */
-
 
 /**Last Digit of A to the B
 Modern computers can handle very large numbers, but this ability has limits. If a number is repeatedly
@@ -138,7 +180,6 @@ Implement a function that accepts two non-negative integers as arguments. Functi
 b)​ should return the last digit of the first number (a) raised to an exponent of the second number (b).
 Examples: given (3, 4)​, you should return 1​ (the last digit of 81: 3 * 3 * 3 * 3). Given (12, 5)​, return
 2​ (the least significant digit of 248832, which is 12 * 12 * 12 * 12 * 12). */
-
 
 /**Clock Hand Angles
 Traditional clocks are increasingly uncommon, but most can still read rotating hands of hours, minutes,
