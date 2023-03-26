@@ -111,57 +111,65 @@ integer between 1 and 6 inclusive. Roll a pair of
 these dice, tracking the statistics until doubles
 are rolled. Display the number of rolls, min, max,
 and average. */
-function doubleDice() {
-  rolls = 0;
-  min = 7;
-  max = 0;
-  sum = 0;
-  for (var i = 1; i < 50; i++) {
-    die1 = Math.floor(Math.random() * 6 + 1);
-    die2 = Math.floor(Math.random() * 6 + 1);
-    // console.log(die1, die2);
-    lowest = Math.min(die1, die2);
-    highest = Math.max(die1, die2);
-    // console.log("lowest:" + lowest, "highest: " + highest);
-    sum += die1 +die2;
-    rolls = i;
-    if (die1 == die2 && (lowest < min && highest > max)) {
-      min = Math.min(die1, die2);
-      max = Math.max(die1, die2);
-      console.log(rolls, min, max, sum/rolls);
-      return;
-    } else if (die1 == die2 && (lowest < min || highest > max)) {
-      if (lowest < min) {
-        min = lowest;
-      } else
-      max = highest;
-      console.log(rolls, min, max, sum/rolls);
-      return;
-    } else if (die1 == die2) {
-      console.log(rolls, min, max, sum/rolls);
-      return;
-    } else if (lowest < min && highest > max) {
-        min = Math.min(die1, die2);
-        max = Math.max(die1, die2);
-        // console.log("First:" + rolls, min, max);
-    } else if (lowest < min || highest > max) {
-      if (lowest < min) {
-        min = lowest;
-      } else
-        max = highest;
-      // console.log("Second:" + rolls, min, max);
-    }
-  }
-}
+// function doubleDice() {
+//   rolls = 0;
+//   min = 7;
+//   max = 0;
+//   sum = 0;
+//   for (var i = 1; i < 50; i++) {
+//     die1 = Math.floor(Math.random() * 6 + 1);
+//     die2 = Math.floor(Math.random() * 6 + 1);
+//     // console.log(die1, die2);
+//     lowest = Math.min(die1, die2);
+//     highest = Math.max(die1, die2);
+//     // console.log("lowest:" + lowest, "highest: " + highest);
+//     sum += die1 +die2;
+//     rolls = i;
+//     if (die1 == die2 && (lowest < min && highest > max)) {
+//       min = Math.min(die1, die2);
+//       max = Math.max(die1, die2);
+//       console.log(rolls, min, max, sum/rolls);
+//       return;
+//     } else if (die1 == die2 && (lowest < min || highest > max)) {
+//       if (lowest < min) {
+//         min = lowest;
+//       } else
+//       max = highest;
+//       console.log(rolls, min, max, sum/rolls);
+//       return;
+//     } else if (die1 == die2) {
+//       console.log(rolls, min, max, sum/rolls);
+//       return;
+//     } else if (lowest < min && highest > max) {
+//         min = Math.min(die1, die2);
+//         max = Math.max(die1, die2);
+//         // console.log("First:" + rolls, min, max);
+//     } else if (lowest < min || highest > max) {
+//       if (lowest < min) {
+//         min = lowest;
+//       } else
+//         max = highest;
+//       // console.log("Second:" + rolls, min, max);
+//     }
+//   }
+// }
 
-doubleDice();
-
+// doubleDice();
 
 /**Sum To One Digit
 Implement a function sumToOne(num)​ that,
 given a number, sums that number’s digits
 repeatedly until the sum is only one digit. Return
 that final one digit result. */
+// sum = 0;
+// function sumTo(num) {
+//   for (var i = num; i > 0; i--) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// console.log(sumTo(100));
 
 /**Fibonacci
 Implement the Fibonacci function, a famous mathematical equation that generates a numerical
@@ -169,17 +177,50 @@ sequence such that each number is the sum of the previous two. The Fibonacci num
 and 1, coincidentally, have values of 0 and 1. Your function should accept an argument of which
 Fibonacci number.
 Examples: fibonacci(2)​ = 1, fibonacci(3)​ = 2, fibonacci(4)​ = 3, fibonacci(5)​ = 5, etc. */
+// function fibonacci(num) {
+//   // make an if statement for when the argument is "0" or "1"
+//   var sum = num - 1 + (num - 2);
+//   return sum;
+// }
+
+// console.log(fibonacci(5));
 
 /**Last Digit of A to the B
 Modern computers can handle very large numbers, but this ability has limits. If a number is repeatedly
 multiplied by itself, it eventually exceeds the computer’s ability to accurately represent it. (Side note: the
-number of times it is multiplied by itself is called the exponent.) For an optional end-of-chapter
-challenge, determine the smallest (least significant) digit of a number that is potentially very, very large.
-You may find that you must do this without computing the actual (unimaginably large) number.
+number of times it is multiplied by itself is called the exponent.) 
 Implement a function that accepts two non-negative integers as arguments. Function lastDigitAtoB(a,
 b)​ should return the last digit of the first number (a) raised to an exponent of the second number (b).
 Examples: given (3, 4)​, you should return 1​ (the last digit of 81: 3 * 3 * 3 * 3). Given (12, 5)​, return
 2​ (the least significant digit of 248832, which is 12 * 12 * 12 * 12 * 12). */
+// function lastDigitAtoB(num1, num2) {
+//   var expo = String(num1 ** num2);
+//   console.log(expo);
+//   console.log(expo[expo.length-1]);
+// }
+
+// lastDigitAtoB(12, 5);
+
+/**For an optional end-of-chapter challenge, determine the smallest (least significant) digit of a number 
+that is potentially very, very large. You may find that you must do this without computing the actual 
+(unimaginably large) number. */
+
+  //find the relationship between the num1 "ones" place digit and num2 to find a pattern then write if loops/conditions so no math is needed
+function lastDigitAtoB(num1, num2) {
+ //code here
+}
+
+lastDigitAtoB(12, 1); //last digit is 2
+lastDigitAtoB(12, 2); //last digit is 4
+lastDigitAtoB(12, 3); //last digit is 8
+lastDigitAtoB(12, 4); //last digit is 6
+lastDigitAtoB(12, 5); //last digit is 2
+lastDigitAtoB(12, 6); //last digit is 4
+lastDigitAtoB(12, 7); //last digit is 8
+lastDigitAtoB(12, 8); //last digit is 6
+lastDigitAtoB(12, 9); //last digit is 2
+lastDigitAtoB(12, 10); //last digit is 4
+lastDigitAtoB(12, 11); //last digit is 8
 
 /**Clock Hand Angles
 Traditional clocks are increasingly uncommon, but most can still read rotating hands of hours, minutes,
