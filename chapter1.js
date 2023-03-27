@@ -70,40 +70,39 @@
 // // Implement generateCoinChange(cents)​ that accepts a parameter for the number of cents, and
 // // computes how to represent that amount with the smallest number of coins. Console.log the result.
 // var coins = []; // create variable = [store coin type and count in here]
-// function generateCoinChange(cents) {
-//   var quarter = 0;
-//   var dime = 0;
-//   var nickel = 0;
-//   var penny = 0;
-//   var remainder = 0;
-//   console.log('cents: ' + cents);
-//   for (var i = cents; i > 0; i = remainder) {
-//     if (i > 24) {
-//       quarter = Math.floor(i / 25); //log the integer into quarter
-//       remainder = i % 25; //take the remainder loop it back up to check if still greater then 0
-//       // console.log("remainder: " + remainder);
-//     } else if (i < 25 && i > 10) {
-//       dime = Math.floor(remainder / 10);
-//       remainder = remainder % 10;
-//       // console.log("remainder: " + remainder);
-//     } else if (i < 10 && i > 4) {
-//       nickel = Math.floor(remainder / 5);
-//       remainder = remainder % 5;
-//       // console.log("remainder: " + remainder);
-//     } else {
-//       penny = remainder / 1;
-//       remainder = 0;
-//       // console.log("remainder: " + remainder);
-//       console.log(quarter + " quarter(s)");
-//       console.log(dime + " dime(s)");
-//       console.log(nickel + " nickel(s)");
-//       console.log(penny + " penny(s)");
-//       // console.log("remainder: " + remainder);
-//       return;
-//     }
-//   }
-// }
-// generateCoinChange((Math.floor(Math.random()*100)));
+var quarter = 0;
+var dime = 0;
+var nickel = 0;
+var penny = 0;
+var remainder = 0;
+function generateCoinChange(cents) {
+  console.log('cents: ' + cents);
+  for (var i = cents; i > 0; i = remainder) {
+    if (i > 24) {
+      quarter = Math.floor(i / 25); //log the integer into quarter
+      remainder = i % 25; //take the remainder loop it back up to check if still greater then 0
+      // console.log("remainder: " + remainder);
+    } else if (i < 25 && i > 9) {
+      dime = Math.floor(i / 10);
+      remainder = remainder % 10;
+      // console.log("remainder: " + remainder);
+    } else if (i < 10 && i > 4) {
+      nickel = Math.floor(i / 5);
+      remainder = remainder % 5;
+      // console.log("remainder: " + remainder);
+    } else {
+      penny = i / 1;
+      remainder = 0;
+      // console.log("remainder: " + remainder);
+      // console.log("remainder: " + remainder);
+    }
+  }
+  console.log(quarter + " quarter(s)");
+  console.log(dime + " dime(s)");
+  console.log(nickel + " nickel(s)");
+  console.log(penny + " penny(s)");
+}
+generateCoinChange((Math.floor(Math.random()*100)));
 
 /**Statistics to Doubles
 Implement a ‘die’ that randomly returns an
@@ -206,21 +205,21 @@ that is potentially very, very large. You may find that you must do this without
 (unimaginably large) number. */
 
   //find the relationship between the num1 "ones" place digit and num2 to find a pattern then write if loops/conditions so no math is needed
-function lastDigitAtoB(num1, num2) {
- //code here
-}
+// function lastDigitAtoB(num1, num2) {
+//  //code here
+// }
 
-lastDigitAtoB(12, 1); //last digit is 2
-lastDigitAtoB(12, 2); //last digit is 4
-lastDigitAtoB(12, 3); //last digit is 8
-lastDigitAtoB(12, 4); //last digit is 6
-lastDigitAtoB(12, 5); //last digit is 2
-lastDigitAtoB(12, 6); //last digit is 4
-lastDigitAtoB(12, 7); //last digit is 8
-lastDigitAtoB(12, 8); //last digit is 6
-lastDigitAtoB(12, 9); //last digit is 2
-lastDigitAtoB(12, 10); //last digit is 4
-lastDigitAtoB(12, 11); //last digit is 8
+// lastDigitAtoB(12, 1); //last digit is 2
+// lastDigitAtoB(12, 2); //last digit is 4
+// lastDigitAtoB(12, 3); //last digit is 8
+// lastDigitAtoB(12, 4); //last digit is 6
+// lastDigitAtoB(12, 5); //last digit is 2
+// lastDigitAtoB(12, 6); //last digit is 4
+// lastDigitAtoB(12, 7); //last digit is 8
+// lastDigitAtoB(12, 8); //last digit is 6
+// lastDigitAtoB(12, 9); //last digit is 2
+// lastDigitAtoB(12, 10); //last digit is 4
+// lastDigitAtoB(12, 11); //last digit is 8
 
 /**Clock Hand Angles
 Traditional clocks are increasingly uncommon, but most can still read rotating hands of hours, minutes,
