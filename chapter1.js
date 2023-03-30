@@ -176,13 +176,34 @@ sequence such that each number is the sum of the previous two. The Fibonacci num
 and 1, coincidentally, have values of 0 and 1. Your function should accept an argument of which
 Fibonacci number.
 Examples: fibonacci(2)​ = 1, fibonacci(3)​ = 2, fibonacci(4)​ = 3, fibonacci(5)​ = 5, etc. */
-// function fibonacci(num) {
-//   // make an if statement for when the argument is "0" or "1"
-//   var sum = num - 1 + (num - 2);
-//   return sum;
-// }
+function fibonacci(num) {
+  // make an if statement for when the argument is "0" or "1"
+  var fib = [0,1];
+  function fibonacci(num) {
+    for (var i = 0; i < num; i++) {
+      sum = fib
+    }
+  }
+}
 
-// console.log(fibonacci(5));
+console.log(fibonacci(5));
+
+// solution 1
+function fib(pos) {
+  let fibArr = [0,1];
+  for (var i = 2; i <= pos; i++) {
+   fibArr.push(fibArr[i-1] + fibArr[i-2]) 
+  }
+  return.fibArr.at(pos);
+}
+
+// solution recursion
+function fibonacci(num) {
+  if (num < 2) {
+    return num;
+  }
+  return fibonacci(num-2) + fibonacci(num-1):
+}
 
 /**Last Digit of A to the B
 Modern computers can handle very large numbers, but this ability has limits. If a number is repeatedly
