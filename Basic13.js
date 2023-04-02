@@ -36,4 +36,4 @@
 
 // Shift Array Values
 // Given an array, move all values forward by one index, dropping the first and leaving a '0'​ value at the
-// end.
+// end. Example: given [1,2,3,4,5], return back [2,3,4,5,0]
