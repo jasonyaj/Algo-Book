@@ -192,7 +192,7 @@ console.log(fibonacci(5));
 function fib(pos) {
   let fibArr = [0,1];
   for (var i = 2; i <= pos; i++) {
-   fibArr.push(fibArr[i-1] + fibArr[i-2]) 
+    fibArr.push(fibArr[i-1] + fibArr[i-2]) 
   }
   return.fibArr.at(pos);
 }
@@ -224,12 +224,10 @@ Examples: given (3, 4)​, you should return 1​ (the last digit of 81: 3 * 3 *
 /**For an optional end-of-chapter challenge, determine the smallest (least significant) digit of a number 
 that is potentially very, very large. You may find that you must do this without computing the actual 
 (unimaginably large) number. */
-
   //find the relationship between the num1 "ones" place digit and num2 to find a pattern then write if loops/conditions so no math is needed
 // function lastDigitAtoB(num1, num2) {
 //  //code here
 // }
-
 // lastDigitAtoB(12, 1); //last digit is 2
 // lastDigitAtoB(12, 2); //last digit is 4
 // lastDigitAtoB(12, 3); //last digit is 8
@@ -248,3 +246,13 @@ and seconds.
 Create function clockHandAngles(seconds)​ that, given the number of seconds since 12:00:00, will
 print the angles (in degrees) of the hour, minute and second hands. As a quick review, there are 360
 degrees in a full arc rotation. Treat “straight-up” 12:00:00 as 0 degrees for all hands. */
+
+function clockHandAngles(seconds) {
+  let secondHand = seconds * 6
+  let minuteHand = (seconds * 6) /60
+  let hourHand = (seconds * 6) /3600
+
+  return {secondHand, minuteHand, hourHand}
+}
+
+console.log((clockHandAngles(60)));
