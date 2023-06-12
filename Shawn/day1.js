@@ -295,3 +295,24 @@ const sortedDupeList = new SinglyLinkedList().insertAtBackMany([
 
 // Print your list like so:
 console.log(firstThreeList.toArr());
+
+
+// Tim solution
+insertAtBack(data) {
+  const newNode = new ListNode(data);
+
+  if (this.isEmpty()) {
+    this.head = newNode;
+  } else {
+    let runner = this.head;
+    while (runner) {
+      if (runner.next) {
+        runner = runner.next;
+      } else {
+        runner.next = newNode;
+        break;
+      }
+    }
+  }
+  return this;
+}
